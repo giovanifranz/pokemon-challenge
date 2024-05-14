@@ -1,40 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# POKEMON Challenge
 
-## Getting Started
+This project is a challenge that involves creating an application using the Pokémon API.
 
-First, run the development server:
+Before you start, make sure you have Docker installed on your machine. If not, you can download it from the [official Docker website](https://www.docker.com/products/docker-desktop).
+
+
+## How to run
+
+Follow the steps below to run the project:
+
+1. Start all services defined in the `docker-compose.yaml` file:
+
+```bash
+docker-compose up
+```
+
+This command downloads the necessary images (if they haven't been downloaded yet), creates the containers, and starts all services.
+
+2. Access the `pokemon-challenge` container:
+
+```bash
+docker exec -it pokemon-challenge /bin/bash
+```
+
+This command opens a bash shell inside the `pokemon-challenge` container, allowing you to execute commands within the container.
+
+3. Inside the container, start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Access the `/api/pokemon/:name` endpoint:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Once the development server is running, you can access the Pokémon API endpoint. Replace `:name` with the name of the Pokémon you want to retrieve information about.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+For example, to get information about Pikachu, you would use:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+curl http://localhost:3000/api/pokemon/pikachu
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This command sends a GET request to the server and retrieves information about Pikachu. Make sure to replace `localhost:3000` with the actual server address and port if it's different in your setup.
