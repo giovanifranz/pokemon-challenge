@@ -23,7 +23,7 @@ export default function Home() {
         <Form {...form}>
           <form
             onSubmit={handleSubmit}
-            className="mx-auto flex w-96 flex-col gap-2"
+            className="mx-auto flex flex-col gap-2 md:w-96"
           >
             <FormField
               control={form.control}

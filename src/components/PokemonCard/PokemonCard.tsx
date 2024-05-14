@@ -14,7 +14,7 @@ interface Props extends PokemonOutput {}
 
 export function PokemonCard({ abilities, image, name }: Props) {
   return (
-    <Card className="mx-auto h-80 w-96">
+    <Card className="mx-auto h-80 md:w-96">
       <CardHeader className="flex flex-col items-center gap-2">
         <CardTitle>{name}</CardTitle>
         <CardDescription>Abilities</CardDescription>

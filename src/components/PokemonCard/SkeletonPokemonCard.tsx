@@ -2,7 +2,7 @@ import { Skeleton } from '../ui/skeleton'
 
 export function SkeletonPokemonCard() {
   return (
-    <div className="mx-auto flex h-80 w-96 flex-col gap-4 rounded-lg border bg-card p-8 text-card-foreground shadow-sm">
+    <div className="mx-auto flex h-80 flex-col gap-4 rounded-lg border bg-card p-8 text-card-foreground shadow-sm md:w-96">
       <div className="flex flex-col items-center gap-4">
         <Skeleton className="h-8 w-1/2" />
         <Skeleton className="h-6 w-24" />
